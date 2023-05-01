@@ -1,0 +1,19 @@
+body{
+    background: #000;
+    font-family: Averta;
+    color: #fff;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 64px;
+
+  color: #ffffff;
+}
+
+.title-xl {
+}
+
+.text {
+}
