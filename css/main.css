@@ -52,6 +52,7 @@ body {
 }
 
 .section1 {
+  position: relative;
   padding-top: 60px;
   background-image: url(../img/main_bg.png);
   background-position: top center;
@@ -145,13 +146,20 @@ body {
   gap: 36px;
 }
 
-.content-images__row:first-child {
-  opacity: 0.5;
-}
-
 .content-images__abs {
   position: absolute;
   width: 100%;
   left: 0;
   top: 0;
+}
+
+.content-images__bottom {
+  position: absolute;
+  width: 100%;
+  bottom: -0;
+  left: 0;
+}
+
+.content-images__opacity {
+  opacity: 0.4;
 }
