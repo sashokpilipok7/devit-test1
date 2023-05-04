@@ -163,3 +163,52 @@ body {
 .content-images__opacity {
   opacity: 0.4;
 }
+
+.section2 {
+  background: url(../img/section2_bg.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-bottom: 82px;
+}
+.section2__row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 100px;
+}
+
+.section2__title {
+}
+
+.section2__desc {
+  margin-top: 32px;
+}
+
+.card {
+}
+
+.card__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: 2px;
+
+  /* White */
+
+  color: #ffffff;
+
+  opacity: 0.6;
+}
+
+.card__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  /* White */
+
+  color: #ffffff;
+}
