@@ -165,10 +165,12 @@ body {
 }
 
 .section2 {
+  position: relative;
   background: url(../img/section2_bg.png);
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
   padding-bottom: 82px;
+  background-position-y: -210px;
 }
 .section2__row {
   display: flex;
@@ -188,17 +190,14 @@ body {
 }
 
 .card__text {
+  margin-top: 24px;
+  margin-bottom: 16px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  /* identical to box height, or 143% */
-
   letter-spacing: 2px;
 
-  /* White */
-
   color: #ffffff;
-
   opacity: 0.6;
 }
 
@@ -211,4 +210,21 @@ body {
   /* White */
 
   color: #ffffff;
+}
+
+.section2__arrows-group {
+  position: absolute;
+  top: 16px;
+  right: 0;
+}
+
+.section2__arrow {
+  padding: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.section2__arrow:first-child {
+  margin-right: 16px;
 }
