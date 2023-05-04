@@ -67,6 +67,7 @@ body {
 .content {
   margin-top: 220px;
   margin-bottom: 280px;
+  margin-right: 45px;
 }
 
 .content .title-xl {
@@ -130,6 +131,22 @@ body {
 }
 
 .content-images {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+  position: relative;
+  top: -90px;
+}
+
+.content-images__row {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 36px;
+}
+
+.content-images__row:first-child {
+  opacity: 0.5;
 }
 
 .content-images__abs {
