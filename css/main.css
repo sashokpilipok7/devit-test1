@@ -82,6 +82,9 @@ body {
   max-width: 515px;
   display: flex;
   align-items: center;
+  background-color: #000;
+  border-radius: 17px;
+  padding: 0 6px;
 }
 
 .main-form .input {
@@ -120,4 +123,18 @@ body {
 
 .join-us:first-child {
   margin-right: 16px;
+}
+
+.main-row {
+  display: flex;
+}
+
+.content-images {
+}
+
+.content-images__abs {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
 }
