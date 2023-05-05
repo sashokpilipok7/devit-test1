@@ -45,6 +45,7 @@ body {
 .container {
   max-width: 1220px;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
 /* Header block */
@@ -222,5 +223,96 @@ body {
   }
   .content-images {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 40px;
+    line-height: 40px;
+
+    color: #ffffff;
+  }
+
+  .title-xl {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .section1 {
+    background-size: 100%;
+    background-position: top center;
+  }
+
+  .desc {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .text {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .section1__content {
+    margin-top: 120px;
+    margin-bottom: 140px;
+    margin-right: 0;
+  }
+  .section1__form {
+    width: 80%;
+  }
+  .section1__input {
+    height: 40px;
+  }
+  .section1__submit {
+    height: 32px;
+  }
+  .section2 {
+    padding-bottom: 40px;
+  }
+  .section2__row {
+    margin-top: 40px;
+  }
+  .section2__desc {
+    margin-top: 16px;
+  }
+  .card__text {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .card__title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 24px;
+    line-height: 40px;
+
+    color: #ffffff;
+  }
+
+  .title-xl {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .desc {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .section1__content {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    margin-right: 0;
+  }
+  .section1__form {
+    width: 90%;
+  }
+  .section2__arrow {
+    padding: 8px;
   }
 }
