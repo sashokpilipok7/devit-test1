@@ -1,3 +1,4 @@
+/* Main blocks */
 body {
   background: #000;
   font-family: Averta;
@@ -17,9 +18,6 @@ body {
   font-weight: 800;
   font-size: 96px;
   line-height: 80px;
-  /* or 83% */
-
-  /* White */
 
   color: #ffffff;
 }
@@ -29,8 +27,6 @@ body {
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
-  /* or 133% */
-
   color: #ffffff;
 
   opacity: 0.7;
@@ -51,6 +47,7 @@ body {
   margin: 0 auto;
 }
 
+/* Section one */
 .section1 {
   position: relative;
   padding-top: 60px;
@@ -110,8 +107,6 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  /* or 150% */
-
   text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -164,6 +159,7 @@ body {
   opacity: 0.4;
 }
 
+/* Section two */
 .section2 {
   position: relative;
   background: url(../img/section2_bg.png);
@@ -186,6 +182,23 @@ body {
   margin-top: 32px;
 }
 
+.section2__arrows-group {
+  position: absolute;
+  top: 16px;
+  right: 0;
+}
+
+.section2__arrow {
+  padding: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.section2__arrow:first-child {
+  margin-right: 16px;
+}
+
 .card {
 }
 
@@ -205,26 +218,6 @@ body {
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  /* identical to box height, or 133% */
-
-  /* White */
 
   color: #ffffff;
-}
-
-.section2__arrows-group {
-  position: absolute;
-  top: 16px;
-  right: 0;
-}
-
-.section2__arrow {
-  padding: 15px;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.section2__arrow:first-child {
-  margin-right: 16px;
 }
