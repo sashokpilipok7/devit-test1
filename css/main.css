@@ -47,6 +47,14 @@ body {
   margin: 0 auto;
 }
 
+/* Header block */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* Section one */
 .section1 {
   position: relative;
@@ -55,29 +63,19 @@ body {
   background-position: top center;
   background-repeat: no-repeat;
 }
-
-.header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.content {
+.section1__content {
   margin-top: 220px;
   margin-bottom: 280px;
   margin-right: 45px;
 }
 
-.content .title-xl {
-}
-
-.content .desc {
+.section1__content .desc {
   margin-top: 30px;
   margin-bottom: 45px;
   max-width: 530px;
 }
 
-.main-form {
+.section1__form {
   max-width: 515px;
   display: flex;
   align-items: center;
@@ -86,7 +84,7 @@ body {
   padding: 0 6px;
 }
 
-.main-form .input {
+.section1__input {
   height: 62px;
   flex: 1;
   font-weight: 700;
@@ -98,7 +96,7 @@ body {
   padding-left: 32px;
 }
 
-.main-form .submit-button {
+.section1__submit {
   width: 182px;
   height: 50px;
 
@@ -114,18 +112,19 @@ body {
   cursor: pointer;
 }
 
-.button-group {
+.section1__btngroup {
   margin-top: 44px;
 }
 
-.join-us:first-child {
+.section1__join:first-child {
   margin-right: 16px;
 }
 
-.main-row {
+.section1__row {
   display: flex;
 }
 
+/* Images block */
 .content-images {
   display: flex;
   flex-direction: row;
@@ -175,9 +174,6 @@ body {
   margin-top: 100px;
 }
 
-.section2__title {
-}
-
 .section2__desc {
   margin-top: 32px;
 }
@@ -199,9 +195,7 @@ body {
   margin-right: 16px;
 }
 
-.card {
-}
-
+/* Card block */
 .card__text {
   margin-top: 24px;
   margin-bottom: 16px;
@@ -220,4 +214,13 @@ body {
   line-height: 32px;
 
   color: #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+  .section1__row {
+    justify-content: center;
+  }
+  .content-images {
+    display: none;
+  }
 }
