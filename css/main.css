@@ -261,9 +261,11 @@ body {
   }
   .section1__input {
     height: 40px;
+    padding-left: 0;
   }
   .section1__submit {
     height: 32px;
+    font-size: 12px;
   }
   .section2 {
     padding-bottom: 40px;
@@ -274,9 +276,14 @@ body {
   .section2__desc {
     margin-top: 16px;
   }
+  .section2__arrows-group {
+    top: 60px;
+  }
   .card__text {
     font-size: 12px;
     line-height: 14px;
+    margin-top: 12px;
+    margin-bottom: 8px;
   }
   .card__title {
     font-size: 18px;
@@ -305,14 +312,31 @@ body {
     line-height: 16px;
   }
   .section1__content {
-    margin-top: 80px;
-    margin-bottom: 100px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     margin-right: 0;
+    width: 100%;
   }
   .section1__form {
     width: 90%;
   }
   .section2__arrow {
     padding: 8px;
+  }
+  .section2__row {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .section2__desc {
+    margin-top: 10px;
+  }
+  .section2__arrows-group {
+    top: 70px;
+  }
+  .card {
+    width: 100%;
+  }
+  .card .img {
+    width: 100%;
   }
 }
