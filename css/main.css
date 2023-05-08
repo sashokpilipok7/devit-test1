@@ -340,3 +340,22 @@ body {
     width: 100%;
   }
 }
+
+/* SLIDER STYLES */
+
+/* @keyframes verticalScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-395px * 2));
+  }
+} */
+.slider {
+  overflow: hidden;
+  height: 1000px;
+}
+/* .slider__track {
+  animation: verticalScroll var(--animation-speed) linear infinite;
+  display: flex;
+} */

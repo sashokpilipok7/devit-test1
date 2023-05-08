@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <div class="container">
-      <section class="section1">
+    <main>
+      <section class="section1 container">
         <header class="header">
           <a aria-label="logo" href="/"><img src="img/logo.svg" alt="" /></a>
           <nav class="menu">
@@ -58,7 +58,7 @@
               /></a>
             </div>
           </div>
-          <div class="content-images">
+          <div class="content-images slider">
             <div class="content-images__row">
               <img
                 class="content-images__opacity"
@@ -72,18 +72,18 @@
               />
               <img src="img/bg_side_3.png" alt="" />
             </div>
-            <div class="content-images__row">
-              <img src="img/bg_side_1.png" alt="" />
-              <img src="img/bg_side_2.png" alt="" />
+            <div class="content-images__row slider__track">
+              <img class="slider__item" src="img/bg_side_1.png" alt="" />
+              <img class="slider__item" src="img/bg_side_2.png" alt="" />
+              <img class="slider__item" src="img/bg_side_1.png" alt="" />
+              <img class="slider__item" src="img/bg_side_2.png" alt="" />
             </div>
           </div>
         </div>
         <img class="content-images__abs" src="img/bg_color.png" alt="" />
         <img class="content-images__bottom" src="img/bg_bottom.png" alt="" />
       </section>
-    </div>
-    <div class="container">
-      <section class="section2">
+      <section class="section2 container">
         <h3 class="section2__title title">Showcase. Share. Teach.</h3>
         <p class="section2__desc text">Immersive your members in your world</p>
         <div class="section2__arrows-group">
@@ -108,7 +108,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </main>
     <script src="./js/main.js"></script>
   </body>
 </html>
