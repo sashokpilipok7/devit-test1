@@ -6,28 +6,33 @@ menuToggle.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
 
+const slider = document.querySelector(".slider");
 const sliderTrack = document.querySelector(".slider__track");
 const sliderItems = document.querySelectorAll(".slider__track .slider__item");
 const sliderDirection = sliderTrack.getAttribute("data-direction");
 const sliderSpeed = sliderTrack.getAttribute("data-speed");
 
 function prepareSlider() {
-  let trackSize = 0;
+  let trackSize =
+    sliderDirection === "y" ? slider.offsetHeight + 80 : slider.offsetWidth;
+  let duplicateSize = 0;
   sliderItems.forEach((item) => {
     if (sliderDirection === "y") {
-      trackSize = trackSize + item.offsetHeight;
+      duplicateSize = duplicateSize + item.offsetHeight;
     } else {
-      trackSize = trackSize + item.offsetWidth;
+      duplicateSize = duplicateSize + item.offsetWidth;
     }
 
-    const node = item.cloneNode(true);
-    sliderTrack.appendChild(node);
+    if (duplicateSize < trackSize) {
+      const node = item.cloneNode(true);
+      sliderTrack.appendChild(node);
+    }
   });
 
   console.log(trackSize, "trackSize");
 
   sliderTrack.animate(
-    [{ transform: `translate${sliderDirection}(-${trackSize + 80}px)` }],
+    [{ transform: `translate${sliderDirection}(-${trackSize}px)` }],
     {
       duration: Number(sliderSpeed),
       iterations: Infinity,
