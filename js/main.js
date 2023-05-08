@@ -8,27 +8,28 @@ menuToggle.addEventListener("click", () => {
 
 const sliderTrack = document.querySelector(".slider__track");
 const sliderItems = document.querySelectorAll(".slider__track .slider__item");
+const sliderDirection = sliderTrack.getAttribute("data-direction");
+const sliderSpeed = sliderTrack.getAttribute("data-speed");
 
-console.log(sliderTrack, "sliderTrack");
-console.log(sliderItems, "sliderItems");
-
-function prepareSlider(direction, speed = 10) {
-  let height = 0;
-  let width = 0;
-  let gap = 36;
+function prepareSlider() {
+  let trackSize = 0;
   sliderItems.forEach((item) => {
-    height = height + item.offsetHeight + gap;
+    if (sliderDirection === "y") {
+      trackSize = trackSize + item.offsetHeight;
+    } else {
+      trackSize = trackSize + item.offsetWidth;
+    }
+
+    const node = item.cloneNode(true);
+    sliderTrack.appendChild(node);
   });
 
-  console.log(height, "height");
+  console.log(trackSize, "trackSize");
 
   sliderTrack.animate(
-    [
-      { transform: " transform: translateY(000px);" },
-      { transform: `translateY(-${860}px)` },
-    ],
+    [{ transform: `translate${sliderDirection}(-${trackSize + 80}px)` }],
     {
-      duration: 4000,
+      duration: Number(sliderSpeed),
       iterations: Infinity,
     }
   );

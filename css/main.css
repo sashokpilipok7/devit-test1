@@ -138,7 +138,10 @@ body {
   display: flex;
   flex-direction: column;
   width: 50%;
-  gap: 36px;
+}
+
+.content-images__row img {
+  padding-bottom: 36px;
 }
 
 .content-images__abs {
@@ -342,20 +345,12 @@ body {
 }
 
 /* SLIDER STYLES */
-
-/* @keyframes verticalScroll {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(calc(-395px * 2));
-  }
-} */
 .slider {
   overflow: hidden;
   height: 1000px;
+  width: 100%;
 }
-/* .slider__track {
-  animation: verticalScroll var(--animation-speed) linear infinite;
+
+.slider__track {
   display: flex;
-} */
+}

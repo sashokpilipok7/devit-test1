@@ -17,6 +17,15 @@
   <body>
     <main>
       <section class="section1 container">
+        <!-- <div class="slider">
+          <div class="slider__track" data-direction="x" data-speed="4000">
+            <img class="slider__item" src="img/bg_side_1.png" alt="" />
+            <img class="slider__item" src="img/bg_side_2.png" alt="" />
+            <img class="slider__item" src="img/bg_side_1.png" alt="" />
+            <img class="slider__item" src="img/bg_side_2.png" alt="" />
+            <img class="slider__item" src="img/bg_side_3.png" alt="" />
+          </div>
+        </div> -->
         <header class="header">
           <a aria-label="logo" href="/"><img src="img/logo.svg" alt="" /></a>
           <nav class="menu">
@@ -70,11 +79,13 @@
                 src="img/bg_side_4.png"
                 alt=""
               />
-              <img src="img/bg_side_3.png" alt="" />
+              <img class="slider__item" src="img/bg_side_3.png" alt="" />
             </div>
-            <div class="content-images__row slider__track">
-              <img class="slider__item" src="img/bg_side_1.png" alt="" />
-              <img class="slider__item" src="img/bg_side_2.png" alt="" />
+            <div
+              class="content-images__row slider__track"
+              data-direction="y"
+              data-speed="4000"
+            >
               <img class="slider__item" src="img/bg_side_1.png" alt="" />
               <img class="slider__item" src="img/bg_side_2.png" alt="" />
             </div>
