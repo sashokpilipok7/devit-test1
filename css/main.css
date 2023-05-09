@@ -137,7 +137,6 @@ body {
 .content-images__row {
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 
 .content-images__row img {
@@ -200,6 +199,9 @@ body {
 }
 
 /* Card block */
+.card {
+  min-width: 33%;
+}
 .card__text {
   margin-top: 24px;
   margin-bottom: 16px;
@@ -345,9 +347,8 @@ body {
 }
 
 /* SLIDER STYLES */
-.slider {
+web-slider {
   overflow: hidden;
-  height: 1000px;
   width: 100%;
 }
 

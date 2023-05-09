@@ -17,7 +17,7 @@
   <body>
     <main>
       <section class="section1 container">
-        <!-- <div class="slider">
+        <!-- <web-slider>
           <div class="slider__track" data-direction="x" data-speed="300">
             <img class="slider__item" src="img/bg_side_1.png" alt="" />
             <img class="slider__item" src="img/bg_side_2.png" alt="" />
@@ -25,7 +25,7 @@
             <img class="slider__item" src="img/bg_side_2.png" alt="" />
             <img class="slider__item" src="img/bg_side_1.png" alt="" />
           </div>
-        </div> -->
+        </web-slider> -->
         <header class="header">
           <a aria-label="logo" href="/"><img src="img/logo.svg" alt="" /></a>
           <nav class="menu">
@@ -67,27 +67,31 @@
               /></a>
             </div>
           </div>
-          <div class="content-images slider">
-            <div
-              class="content-images__row slider__track"
-              data-direction="y"
-              data-speed="250"
-            >
-              <img
-                class="content-images__opacity slider__item"
-                src="img/bg_side_5.png"
-                alt=""
-              />
-              <img
-                class="content-images__opacity slider__item"
-                src="img/bg_side_4.png"
-                alt=""
-              />
-              <img class="slider__item" src="img/bg_side_3.png" alt="" />
-            </div>
-            <div class="content-images__row">
-              <img class="slider__item" src="img/bg_side_1.png" alt="" />
-              <img class="slider__item" src="img/bg_side_2.png" alt="" />
+          <div class="content-images">
+            <web-slider style="width: 50%; height: 1000px">
+              <div
+                class="content-images__row slider__track"
+                data-direction="y"
+                data-speed="250"
+              >
+                <img
+                  class="content-images__opacity slider__item"
+                  src="img/bg_side_5.png"
+                  alt=""
+                />
+                <img
+                  class="content-images__opacity slider__item"
+                  src="img/bg_side_4.png"
+                  alt=""
+                />
+                <img class="slider__item" src="img/bg_side_3.png" alt="" />
+              </div>
+            </web-slider>
+            <div style="width: 50%">
+              <div class="content-images__row">
+                <img class="slider__item" src="img/bg_side_1.png" alt="" />
+                <img class="slider__item" src="img/bg_side_2.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -101,23 +105,44 @@
           <img src="img/arrow_l.svg" alt="" class="section2__arrow" />
           <img src="img/arrow_r.svg" alt="" class="section2__arrow" />
         </div>
-        <div class="section2__row">
-          <div class="card">
-            <img src="img/person1.png" alt="" class="img" />
-            <p class="card__text">COMEDIAN</p>
-            <h4 class="card__title">RICKY GERVAIS</h4>
+        <web-slider>
+          <div
+            class="section2__row slider__track"
+            data-direction="x"
+            data-speed="250"
+          >
+            <div class="card slider__item">
+              <img src="img/person1.png" alt="" class="img" />
+              <p class="card__text">COMEDIAN</p>
+              <h4 class="card__title">RICKY GERVAIS</h4>
+            </div>
+            <div class="card slider__item">
+              <img src="img/person2.png" alt="" class="img" />
+              <p class="card__text">TENNIS PLAYER</p>
+              <h4 class="card__title">SERENA WILLIAMS</h4>
+            </div>
+            <div class="card slider__item">
+              <img src="img/person3.png" alt="" class="img" />
+              <p class="card__text">Entrepreneur</p>
+              <h4 class="card__title">RICHARD BRANSON</h4>
+            </div>
+            <div class="card slider__item">
+              <img src="img/person1.png" alt="" class="img" />
+              <p class="card__text">COMEDIAN</p>
+              <h4 class="card__title">RICKY GERVAIS</h4>
+            </div>
+            <div class="card slider__item">
+              <img src="img/person2.png" alt="" class="img" />
+              <p class="card__text">TENNIS PLAYER</p>
+              <h4 class="card__title">SERENA WILLIAMS</h4>
+            </div>
+            <div class="card slider__item">
+              <img src="img/person3.png" alt="" class="img" />
+              <p class="card__text">Entrepreneur</p>
+              <h4 class="card__title">RICHARD BRANSON</h4>
+            </div>
           </div>
-          <div class="card">
-            <img src="img/person2.png" alt="" class="img" />
-            <p class="card__text">TENNIS PLAYER</p>
-            <h4 class="card__title">SERENA WILLIAMS</h4>
-          </div>
-          <div class="card">
-            <img src="img/person3.png" alt="" class="img" />
-            <p class="card__text">Entrepreneur</p>
-            <h4 class="card__title">RICHARD BRANSON</h4>
-          </div>
-        </div>
+        </web-slider>
       </section>
     </main>
     <script src="./js/main.js"></script>
