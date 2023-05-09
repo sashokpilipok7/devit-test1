@@ -60,7 +60,6 @@ class Slider extends HTMLElement {
 
   connectedCallback() {
     console.log("sLIDER WEB COMPONENT AWS CREATED!");
-    console.log(this.offsetHeight, "offsetHeight");
 
     const sliderTrack = this.querySelector(".slider__track");
     const sliderItems = sliderTrack.querySelectorAll(".slider__item");
