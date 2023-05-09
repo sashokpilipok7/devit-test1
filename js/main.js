@@ -16,6 +16,7 @@ function prepareSlider() {
   let trackSize =
     sliderDirection === "y" ? slider.offsetHeight + 80 : slider.offsetWidth;
   let duplicateSize = 0;
+  const speed = (trackSize / sliderSpeed) * 1000;
   sliderItems.forEach((item) => {
     if (sliderDirection === "y") {
       duplicateSize = duplicateSize + item.offsetHeight;
@@ -30,11 +31,11 @@ function prepareSlider() {
   });
 
   console.log(trackSize, "trackSize");
-
+  console.log(speed, "speed");
   sliderTrack.animate(
     [{ transform: `translate${sliderDirection}(-${trackSize}px)` }],
     {
-      duration: Number(sliderSpeed),
+      duration: speed,
       iterations: Infinity,
     }
   );
