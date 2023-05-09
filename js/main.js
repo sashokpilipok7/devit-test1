@@ -12,11 +12,11 @@ const sliderItems = document.querySelectorAll(".slider__track .slider__item");
 const sliderDirection = sliderTrack.getAttribute("data-direction");
 const sliderSpeed = sliderTrack.getAttribute("data-speed");
 
-function prepareSlider() {
-  let trackSize =
-    sliderDirection === "y" ? slider.offsetHeight + 80 : slider.offsetWidth;
+function prepareSlider(height, width) {
+  let trackSize = sliderDirection === "y" ? height + 80 : width;
   let duplicateSize = 0;
-  const speed = (trackSize / sliderSpeed) * 1000;
+  let speed = (trackSize / Number(sliderSpeed)) * 1000;
+
   sliderItems.forEach((item) => {
     if (sliderDirection === "y") {
       duplicateSize = duplicateSize + item.offsetHeight;
@@ -41,4 +41,12 @@ function prepareSlider() {
   );
 }
 
-prepareSlider();
+prepareSlider(slider.offsetHeight, slider.offsetWidth);
+
+// Recalculate after resize
+const resizeObserver = new ResizeObserver((entries) => {
+  const newSize = entries[0].contentBoxSize[0];
+
+  prepareSlider(newSize.blockSize.toFixed(2), newSize.inlineSize.toFixed(2));
+});
+resizeObserver.observe(slider);
