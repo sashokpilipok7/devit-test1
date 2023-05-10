@@ -47,6 +47,7 @@ body {
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 16px;
+  overflow-x: hidden;
 }
 
 /* Header block */
