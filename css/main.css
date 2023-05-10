@@ -174,8 +174,11 @@ body {
 .section2__row {
   display: flex;
   flex-direction: row;
-  gap: 24px;
   margin-top: 100px;
+}
+
+.section2__row .card {
+  padding: 0 24px;
 }
 
 .section2__desc {
@@ -201,7 +204,7 @@ body {
 
 /* Card block */
 .card {
-  min-width: 33%;
+  min-width: 33.333%;
 }
 .card__text {
   margin-top: 24px;
@@ -331,8 +334,12 @@ body {
   }
   .section2__row {
     flex-wrap: wrap;
-    gap: 30px;
   }
+
+  .section2__row .card {
+    padding: 30px 0;
+  }
+
   .section2__desc {
     margin-top: 10px;
   }

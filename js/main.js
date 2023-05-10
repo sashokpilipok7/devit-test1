@@ -20,7 +20,7 @@ class Slider extends HTMLElement {
     let viewSize = sliderDirection === "y" ? height : width;
     let trackSize =
       sliderDirection === "y"
-        ? sliderTrack.offsetHeight - 80
+        ? sliderTrack.offsetHeight - 75
         : sliderTrack.offsetWidth;
     let moveSize = trackSize - viewSize;
     let duplicateSize = 0;
