@@ -59,7 +59,6 @@ class Slider extends HTMLElement {
     this.render(this.offsetHeight, this.offsetWidth, true);
 
     const resizeObserver = new ResizeObserver((entries) => {
-      console.log("size changed", this);
       const newSize = entries[0].contentBoxSize[0];
       const newHeight = newSize.blockSize.toFixed(2);
       const newWidth = newSize.inlineSize.toFixed(2);
