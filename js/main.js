@@ -6,85 +6,48 @@ menuToggle.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
 
-// const slider = document.querySelector(".slider");
-// const sliderTrack = document.querySelector(".slider__track");
-// const sliderItems = document.querySelectorAll(".slider__track .slider__item");
-// const sliderDirection = sliderTrack.getAttribute("data-direction");
-// const sliderSpeed = sliderTrack.getAttribute("data-speed");
-
-// function prepareSlider(height, width) {
-//   let trackSize = sliderDirection === "y" ? height + 85 : width;
-//   let duplicateSize = 0;
-//   let speed = (trackSize / Number(sliderSpeed)) * 1000;
-
-//   sliderItems.forEach((item) => {
-//     if (sliderDirection === "y") {
-//       duplicateSize = duplicateSize + item.offsetHeight;
-//     } else {
-//       duplicateSize = duplicateSize + item.offsetWidth;
-//     }
-
-//     if (duplicateSize < trackSize) {
-//       const node = item.cloneNode(true);
-//       sliderTrack.appendChild(node);
-//     }
-//   });
-
-//   console.log(trackSize, "trackSize");
-//   console.log(speed, "speed");
-//   sliderTrack.animate(
-//     [{ transform: `translate${sliderDirection}(-${trackSize}px)` }],
-//     {
-//       duration: speed,
-//       iterations: Infinity,
-//     }
-//   );
-// }
-
-// prepareSlider(slider.offsetHeight, slider.offsetWidth);
-
-// Recalculate after resize
-// const resizeObserver = new ResizeObserver((entries) => {
-//   const newSize = entries[0].contentBoxSize[0];
-//   const newHeight = newSize.blockSize.toFixed(2);
-//   const newWidth = newSize.inlineSize.toFixed(2);
-
-//   prepareSlider(Number(newHeight), Number(newWidth));
-// });
-// resizeObserver.observe(slider);
-
 class Slider extends HTMLElement {
   constructor() {
     super();
   }
 
-  render() {
+  render(height, width, withDuplicate) {
     const sliderTrack = this.querySelector(".slider__track");
     const sliderItems = sliderTrack.querySelectorAll(".slider__item");
     const sliderDirection = sliderTrack.getAttribute("data-direction");
     const sliderSpeed = sliderTrack.getAttribute("data-speed");
 
+    let viewSize = sliderDirection === "y" ? height : width;
     let trackSize =
-      sliderDirection === "y" ? this.offsetHeight + 75 : this.offsetWidth;
+      sliderDirection === "y"
+        ? sliderTrack.offsetHeight - 80
+        : sliderTrack.offsetWidth;
+    let moveSize = trackSize - viewSize;
     let duplicateSize = 0;
     let speed = (trackSize / Number(sliderSpeed)) * 1000;
 
-    sliderItems.forEach((item) => {
-      if (sliderDirection === "y") {
-        duplicateSize = duplicateSize + item.offsetHeight;
-      } else {
-        duplicateSize = duplicateSize + item.offsetWidth;
-      }
+    if (withDuplicate) {
+      sliderItems.forEach((item) => {
+        if (sliderDirection === "y") {
+          duplicateSize = duplicateSize + item.offsetHeight;
+        } else {
+          duplicateSize = duplicateSize + item.offsetWidth;
+        }
 
-      if (duplicateSize < trackSize) {
-        const node = item.cloneNode(true);
-        sliderTrack.appendChild(node);
-      }
-    });
-
-    console.log(trackSize, "trackSize");
+        if (duplicateSize < viewSize) {
+          const node = item.cloneNode(true);
+          sliderTrack.appendChild(node);
+        }
+      });
+    }
+    console.log(moveSize, "moveSize");
     sliderTrack.animate(
-      [{ transform: `translate${sliderDirection}(-${trackSize}px)` }],
+      [
+        { transform: `translate${sliderDirection}(0px)` },
+        {
+          transform: `translate${sliderDirection}(-${moveSize}px)`,
+        },
+      ],
       {
         duration: speed,
         iterations: Infinity,
@@ -93,17 +56,15 @@ class Slider extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log("sLIDER WEB COMPONENT AWS CREATED!");
-
-    this.render();
+    this.render(this.offsetHeight, this.offsetWidth, true);
 
     const resizeObserver = new ResizeObserver((entries) => {
-      console.log("size changed");
+      console.log("size changed", this);
       const newSize = entries[0].contentBoxSize[0];
       const newHeight = newSize.blockSize.toFixed(2);
       const newWidth = newSize.inlineSize.toFixed(2);
 
-      this.render();
+      this.render(newHeight, newWidth, false);
     });
     resizeObserver.observe(this);
   }

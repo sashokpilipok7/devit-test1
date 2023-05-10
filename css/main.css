@@ -3,6 +3,7 @@ body {
   background: #000;
   font-family: Averta;
   color: #fff;
+  overflow-x: hidden;
 }
 
 .title {
