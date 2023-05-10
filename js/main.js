@@ -58,9 +58,7 @@ class Slider extends HTMLElement {
     super();
   }
 
-  connectedCallback() {
-    console.log("sLIDER WEB COMPONENT AWS CREATED!");
-
+  render() {
     const sliderTrack = this.querySelector(".slider__track");
     const sliderItems = sliderTrack.querySelectorAll(".slider__item");
     const sliderDirection = sliderTrack.getAttribute("data-direction");
@@ -84,6 +82,7 @@ class Slider extends HTMLElement {
       }
     });
 
+    console.log(trackSize, "trackSize");
     sliderTrack.animate(
       [{ transform: `translate${sliderDirection}(-${trackSize}px)` }],
       {
@@ -91,6 +90,22 @@ class Slider extends HTMLElement {
         iterations: Infinity,
       }
     );
+  }
+
+  connectedCallback() {
+    console.log("sLIDER WEB COMPONENT AWS CREATED!");
+
+    this.render();
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      console.log("size changed");
+      const newSize = entries[0].contentBoxSize[0];
+      const newHeight = newSize.blockSize.toFixed(2);
+      const newWidth = newSize.inlineSize.toFixed(2);
+
+      this.render();
+    });
+    resizeObserver.observe(this);
   }
 }
 
